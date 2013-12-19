@@ -34,7 +34,7 @@ module Middleman
           article.author_names.each do |author|
             permalink = Middleman::BlogAuthors::AuthorPages.permalink(author)
             if @app.blog_authors_data[permalink].nil?
-              @app.blog_authors_data[permalink] = ::Middleman::BlogAuthors::Author.new(author, @app.data)
+              @app.blog_authors_data[permalink] = ::Middleman::BlogAuthors::Author.new(author)
             end
             @app.blog_authors_data[permalink].articles << article
           end
